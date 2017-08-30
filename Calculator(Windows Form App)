@@ -1,0 +1,441 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication9
+{
+    public partial class Form1 : Form
+    {
+        double c, total, a, b;
+        string input = string.Empty;
+        string operand1 = string.Empty;
+        string operand2 = string.Empty;
+        char operation;
+        double result;
+        string tString;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+        private void one_Click(object sender, EventArgs e)
+        {
+
+
+            this.textBox1.Text = "";
+            input += "1";
+            this.textBox1.Text = input;
+        }
+
+        private void two_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "2";
+            this.textBox1.Text += input;
+
+        }
+        private void three_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "3";
+            this.textBox1.Text += input;
+        }
+        private void four_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "4";
+            this.textBox1.Text += input;
+        }
+        private void five_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "5";
+            this.textBox1.Text += input;
+        }
+        private void six_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "6";
+            this.textBox1.Text += input;
+
+        }
+        private void seven_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "7";
+            this.textBox1.Text += input;
+        }
+        private void eight_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "8";
+            this.textBox1.Text += input;
+        }
+
+
+        private void nine_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 1)
+
+                this.textBox1.Text = "";
+            input += "9";
+            this.textBox1.Text += input;
+
+        }
+
+        private void zero_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input += "0";
+            this.textBox1.Text += input;
+
+
+        }
+
+        private void addition_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '+';
+            input = string.Empty;
+
+        }
+
+        private void substraction_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '-';
+            input = string.Empty;
+        }
+
+        private void multiplication_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '*';
+            input = string.Empty;
+        }
+
+        private void division_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '/';
+            input = string.Empty;
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            this.input = string.Empty;
+            operand1 = string.Empty;
+            operand2 = string.Empty;
+
+        }
+
+        private void power_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = 's';
+            input = string.Empty;
+
+        }
+
+        private void button15_Click(object sneder, EventArgs e)
+        {
+
+            operand2 = input;
+            double num1, num2;
+            double.TryParse(operand1, out num1);
+            double.TryParse(operand2, out num2);
+
+            if (operation == '+')
+            {
+                result = num1 + num2;
+                textBox1.Text = result.ToString();
+            }
+            else if (operation == '-')
+            {
+                result = num1 - num2;
+                textBox1.Text = result.ToString();
+            }
+            else if (operation == '*')
+            {
+                result = num1 * num2;
+                textBox1.Text = result.ToString();
+            }
+            else if (operation == '/')
+            {
+                if (num2 != 0)
+                {
+                    result = num1 / num2;
+                    textBox1.Text = result.ToString();
+                }
+                else
+                {
+                    textBox1.Text = "DIV/Zero!";
+                }
+            }
+            else if (operation == 's')
+            {
+                result = Math.Pow(num1, num2);
+                textBox1.Text = result.ToString();
+            }
+
+
+
+
+
+
+            if (textBox1.TextLength > 1)
+            {
+                double b = Convert.ToDouble(textBox1.Text);
+
+                double a = Convert.ToDouble(textBox1.Text);
+
+                if (textBox1.Text == "+")
+                {
+                    result = b + a;
+
+                }
+                else if (textBox1.Text == "-")
+                {
+                    result = b - a;
+                }
+                else if (textBox1.Text == "/")
+                {
+                    result = b / a;
+                }
+                else if (textBox1.Text == "*")
+                {
+                    result = b * a;
+                }
+                textBox1.Text = result.ToString();
+            }
+
+
+        }
+
+        //private void textBox2_TextChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+
+        //{
+
+        // if (e.KeyChar == (char)Keys.D1)
+        //{
+        //    {
+        //  c = 1;   
+        //}
+        //if (e.KeyChar == (char)Keys.D2)
+        //{
+        //     c = 2;
+        //           }
+        //if (e.KeyChar == (char)Keys.D3)
+        //{
+        //  c = 3;
+        //}
+        //if (e.KeyChar == (char)Keys.D4)
+        // {
+        //   c = 4;
+        // }
+        //if (e.KeyChar == (char)Keys.D5)
+        //{
+        //  c = 5;
+        //}
+        //if (e.KeyChar == (char)Keys.D6)
+        //{
+        //  c = 6;
+        //}
+        //if (e.KeyChar == (char)Keys.D7)
+        // {
+        //  c = 7;
+        //}
+        //if (e.KeyChar == (char)Keys.D8)
+        // {
+        //  c = 8;
+        //}
+        //if (e.KeyChar == (char)Keys.D9)
+        //{
+        //  c = 9;
+        //}
+        //if (e.KeyChar == (char)Keys.D0)
+        //{
+        //  c = 0;
+        //}
+
+
+
+        //if (e.KeyChar == (char)Keys.Divide)
+        //{
+        //   operation = '/';
+        // }
+        //if (e.KeyChar == (char)Keys.Multiply)
+        //{
+        //  operation = '*';
+        //}
+        //if (e.KeyChar == (char)Keys.Execute)
+        //{
+        //    operation = '+';
+        //  }
+        //     if (e.KeyChar == (char)Keys.Insert)
+        //    {
+        //       operation = '-';
+        //     }
+        //       }
+        //   }
+
+        //   private void button15_Click1(object sneder, EventArgs e)
+        //    {
+        //     if (operation == '*')
+        //     {
+        ///        total = c * c;
+        //     }
+        //   if (operation == '/')
+        //   {
+        //       total = c / c;
+        //   }
+        //   if (operation == '+')
+        //     {
+        //         total = c + c;
+        //     }
+        //   if (operation == '-')
+        //   {
+        //       total = c - c;
+        //    }
+        //    textBox1.Text = total.ToString();
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            tString = textBox1.Text;
+            if (tString.Trim() == "") return;
+            for (int i = 0; i < tString.Length; i++)
+            {
+                if (!char.IsNumber(tString[i]) && !((tString[i] == '+') || (tString[i] == '-') || (tString[i] == '*') || (tString[i] == '/')))
+                {
+                    tString = tString.Trim(tString[i]);
+                    textBox1.Text = tString;
+                    MessageBox.Show("Please enter a valid number");
+
+                    return;
+                }
+                //if (((tString[i] == '+') || (tString[i] == '-') || (tString[i] == '*') || (tString[i] == '/')))
+                //{
+                //    if(tString.Length>1)
+                //    {
+                //        operand1 = tString.Substring(0, tString.Length - 1);
+                //        operation = tString[i];
+                //        tString = string.Empty;
+                //    }
+                //}
+            }
+
+
+
+
+            //if (textBox1.TextLength > 1)
+            //{
+
+            //    a = Convert.ToDouble(textBox1.Text);
+            //    b = Convert.ToDouble(textBox1.Text);
+            //}
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int i = 0;
+            string[] operands = new string[255];
+            char[] spliter = {'+','-','*','/' };
+           if (e.KeyChar == '\r')
+            {
+              //if (((tString[i] == '+') || (tString[i] == '-') || (tString[i] == '*') || (tString[i] == '/')))
+                {
+                    operands = tString.Split(spliter);
+                    if (operands.Count() >= 2)
+                    {
+                        if (tString.Contains('+'))
+                        {
+                            textBox1.Text = Convert.ToString(Convert.ToInt64(operands[0]) + Convert.ToInt64(operands[1]));
+                        }
+                        if (tString.Contains('-'))
+                        {
+                            textBox1.Text = Convert.ToString(Convert.ToInt64(operands[0]) - Convert.ToInt64(operands[1]));
+                        }
+                        if (tString.Contains('*'))
+                        {
+                            textBox1.Text = Convert.ToString(Convert.ToInt64(operands[0]) * Convert.ToInt64(operands[1]));
+                        }
+                        if (tString.Contains('/'))
+                        {
+                            textBox1.Text = Convert.ToString(Convert.ToInt64(operands[0]) / Convert.ToInt64(operands[1]));
+                        }
+                    }
+
+
+                    //if (tString.Length > 1)
+                    //{
+                    //    operand1 = tString.Substring(0, tString.Length - 1);
+                    //    operation = tString[i];
+                    //    tString = string.Empty;
+                    //}
+                }
+            }
+            //     if(e.KeyChar==(char)Keys.Multiply)
+            //     {
+            //         operation='*';
+
+            //     }
+            //   if(e.KeyChar==(char)Keys.Divide)
+            //   {
+            //              operation='/';
+            //          }
+            //if(e.KeyChar==(char)Keys.Subtract)
+            //          {
+            //              operation='-';
+            //          }
+            //        private KeyPressEventArgs(object sender,EventArgs e)
+            //        {            
+            //            if(operation=='+')
+            //       {
+            //           c=a+b;
+            //       }
+            //          if(operation=='-')
+            //          {
+            //              c=a-b;
+            //          }
+            //          if(operation=='*')
+            //          {
+            //              c=a*b;
+            //          }
+            //          if(operation=='/')
+            //          {
+            //              c=a/b;
+            //          }
+            //          textBox1.Text=c.ToString();
+
+            //    }
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            //textBox1.Text = "Chandan";
+        }
+
+    }
+}
